@@ -1,43 +1,72 @@
-// gen-jsdelivr-links.mjs
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
-// === 1. 修改这里 ===
-const githubUser = 'hypocritical-jiang';     // ← 你的 GitHub 用户名
-const repoName = 'blog-assets';    // ← 仓库名
-const branch = 'main';             // ← 默认 main 分支
-const imageDir = './images';       // ← 本地图片文件夹路径
+// === 配置区 ===
+const githubUser = "hypocritical-jiang"; // GitHub 用户名
+const repoName = "blog-assets"; // 仓库名
+const branch = "main"; // 分支
+const assetDir = "./assets"; // 本地资源目录（图片/视频）
+const outputFile = "cdn_links.md"; // 输出文件名
 
-// === 2. 自动扫描文件 ===
+// 支持的文件类型
+const IMAGE_EXT = /\.(png|jpe?g|gif|svg|webp)$/i;
+const VIDEO_EXT = /\.(mp4|webm|ogg)$/i;
+
+// === 工具函数 ===
 function getAllFiles(dirPath, arrayOfFiles = []) {
   const files = fs.readdirSync(dirPath);
-  files.forEach(file => {
+  for (const file of files) {
     const fullPath = path.join(dirPath, file);
     if (fs.statSync(fullPath).isDirectory()) {
-      arrayOfFiles = getAllFiles(fullPath, arrayOfFiles);
+      getAllFiles(fullPath, arrayOfFiles);
     } else {
       arrayOfFiles.push(fullPath);
     }
-  });
+  }
   return arrayOfFiles;
 }
 
-// === 3. 生成 jsDelivr 链接 ===
 function generateCDNLink(localPath) {
-  const relativePath = localPath.replace(imageDir + '/', '').replace(/\\/g, '/');
+  const relativePath = localPath.replace(assetDir + "/", "").replace(/\\/g, "/");
   return `https://cdn.jsdelivr.net/gh/${githubUser}/${repoName}@${branch}/${relativePath}`;
 }
 
-// === 4. 主程序 ===
-const allFiles = getAllFiles(imageDir).filter(f => /\.(png|jpg|jpeg|gif|svg|webp)$/i.test(f));
+// === 主逻辑 ===
+const allFiles = getAllFiles(assetDir);
+const imageFiles = allFiles.filter(f => IMAGE_EXT.test(f));
+const videoFiles = allFiles.filter(f => VIDEO_EXT.test(f));
 
-let output = `# jsDelivr Links (${new Date().toLocaleString()})\n\n`;
+let output = `# 🌐 jsDelivr CDN 资源索引  
+> 自动生成时间：${new Date().toLocaleString()}  
+> 仓库：\`${githubUser}/${repoName}@${branch}\`  
 
-allFiles.forEach(file => {
-  const cdnLink = generateCDNLink(file);
-  output += `- \`${file}\`\n  → ${cdnLink}\n\n`;
-});
+---
 
-console.log(output);
-fs.writeFileSync('cdn_links.md', output, 'utf-8');
-console.log('\n✅ 已生成 cdn_links.md 文件');
+`;
+
+if (imageFiles.length) {
+  output += `## 🖼 图片资源 (${imageFiles.length} 个)\n\n`;
+  imageFiles.forEach(file => {
+    const cdnLink = generateCDNLink(file);
+    const fileName = path.basename(file);
+    output += `### ${fileName}\n`;
+    output += `**链接：** [${cdnLink}](${cdnLink})  \n`;
+    output += `**预览：**  \n`;
+    output += `![${fileName}](${cdnLink})\n\n`;
+  });
+}
+
+if (videoFiles.length) {
+  output += `## 🎬 视频资源 (${videoFiles.length} 个)\n\n`;
+  videoFiles.forEach(file => {
+    const cdnLink = generateCDNLink(file);
+    const fileName = path.basename(file);
+    output += `### ${fileName}\n`;
+    output += `**链接：** [${cdnLink}](${cdnLink})  \n`;
+    output += `**预览：**  \n`;
+    output += `<video src="${cdnLink}" width="480" height="270" controls muted preload="metadata"></video>\n\n`;
+  });
+}
+
+fs.writeFileSync(outputFile, output, "utf-8");
+console.log(`✅ 已生成 ${outputFile}，共包含 ${imageFiles.length} 张图片、${videoFiles.length} 个视频`);
