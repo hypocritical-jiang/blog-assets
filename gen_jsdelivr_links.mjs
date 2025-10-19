@@ -5,7 +5,7 @@ import path from "path";
 const githubUser = "hypocritical-jiang"; // GitHub 用户名
 const repoName = "blog-assets"; // 仓库名
 const branch = "main"; // 分支
-const assetDir = "./assets"; // 本地资源目录（图片/视频）
+const assetDir = "./"; // 本地资源目录（图片/视频）
 const outputFile = "cdn_links.md"; // 输出文件名
 
 // 支持的文件类型
