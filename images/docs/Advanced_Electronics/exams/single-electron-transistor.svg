@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="white"/>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #1f2937; }
+    .label { font-size: 30px; font-weight: 600; }
+    .small { font-size: 24px; }
+    .wire { stroke: #334155; stroke-width: 10; fill: none; }
+    .barrier { fill: #f59e0b; stroke: #b45309; stroke-width: 4; }
+  </style>
+  <text x="600" y="52" text-anchor="middle" class="label">Single-electron transistor (SET)</text>
+  <line x1="90" y1="230" x2="320" y2="230" class="wire"/>
+  <rect x="320" y="155" width="36" height="150" class="barrier"/>
+  <line x1="356" y1="230" x2="505" y2="230" class="wire"/>
+  <ellipse cx="600" cy="230" rx="95" ry="82" fill="#60a5fa" stroke="#1d4ed8" stroke-width="5"/>
+  <text x="600" y="220" text-anchor="middle" class="label">Island</text>
+  <text x="600" y="260" text-anchor="middle" class="small">N or N+1 e⁻</text>
+  <line x1="695" y1="230" x2="844" y2="230" class="wire"/>
+  <rect x="844" y="155" width="36" height="150" class="barrier"/>
+  <line x1="880" y1="230" x2="1110" y2="230" class="wire"/>
+  <text x="150" y="185" text-anchor="middle" class="label">Source</text>
+  <text x="1040" y="185" text-anchor="middle" class="label">Drain</text>
+  <text x="338" y="338" text-anchor="middle" class="small">Tunnel junction</text>
+  <text x="862" y="338" text-anchor="middle" class="small">Tunnel junction</text>
+  <line x1="600" y1="312" x2="600" y2="395" stroke="#334155" stroke-width="5"/>
+  <line x1="545" y1="395" x2="655" y2="395" stroke="#334155" stroke-width="7"/>
+  <line x1="545" y1="415" x2="655" y2="415" stroke="#334155" stroke-width="7"/>
+  <line x1="600" y1="415" x2="600" y2="465" class="wire"/>
+  <text x="685" y="420" class="small">C<tspan baseline-shift="sub" font-size="18">g</tspan></text>
+  <text x="600" y="500" text-anchor="middle" class="label">Gate V<tspan baseline-shift="sub" font-size="22">g</tspan></text>
+  <text x="600" y="115" text-anchor="middle" class="small">Coulomb blockade when E<tspan baseline-shift="sub" font-size="18">C</tspan> = e²/(2CΣ) ≫ kT</text>
+</svg>
