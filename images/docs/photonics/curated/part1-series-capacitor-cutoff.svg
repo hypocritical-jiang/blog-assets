@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">含串联电容传输线的特性阻抗随频率变化</title>
+  <desc id="desc">截止频率以下特性阻抗为纯虚数，截止频率以上为实数并渐近于根号 L 除以 Cp。</desc>
+  <rect width="1200" height="680" rx="28" fill="#f8fafc"/>
+  <style>
+    .axis{stroke:#334155;stroke-width:4;stroke-linecap:round}.grid{stroke:#cbd5e1;stroke-width:2;stroke-dasharray:10 12}
+    .real{fill:none;stroke:#2563eb;stroke-width:8;stroke-linecap:round}.imag{fill:none;stroke:#dc2626;stroke-width:8;stroke-linecap:round}
+    .label{font:30px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}.small{font:25px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#475569}
+    .legend{font:28px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:650}
+  </style>
+  <text x="600" y="54" text-anchor="middle" class="label" font-weight="700">Series-capacitor transmission line: cutoff and pass band</text>
+  <line x1="95" y1="300" x2="1105" y2="300" class="axis"/><line x1="125" y1="585" x2="125" y2="105" class="axis"/>
+  <path d="M1090 286l18 14-18 14M111 120l14-18 14 18" fill="none" class="axis"/>
+  <line x1="525" y1="105" x2="525" y2="585" class="grid"/>
+  <line x1="125" y1="145" x2="1100" y2="145" class="grid"/>
+  <path d="M525 300 C610 250 690 202 780 177 C875 151 980 146 1095 145" class="real"/>
+  <path d="M135 555 C200 455 285 390 375 346 C440 315 485 302 525 300" class="imag"/>
+  <circle cx="525" cy="300" r="10" fill="#0f172a"/>
+  <text x="1125" y="310" class="label">ω</text><text x="76" y="95" class="label">Z₀ components</text>
+  <text x="525" y="625" text-anchor="middle" class="label">ω<tspan baseline-shift="sub" font-size="20">c</tspan> = 1/√(LC<tspan baseline-shift="sub" font-size="20">s</tspan>)</text>
+  <text x="160" y="650" class="small">stop band: Z₀ is imaginary</text><text x="705" y="650" class="small">pass band: Z₀ is real</text>
+  <text x="970" y="128" class="small">√(L/C<tspan baseline-shift="sub" font-size="18">p</tspan>)</text>
+  <text x="735" y="245" class="legend" fill="#2563eb">Re(Z₀), ω &gt; ω<tspan baseline-shift="sub" font-size="19">c</tspan></text>
+  <text x="180" y="430" class="legend" fill="#dc2626">Im(Z₀), ω &lt; ω<tspan baseline-shift="sub" font-size="19">c</tspan></text>
+</svg>
