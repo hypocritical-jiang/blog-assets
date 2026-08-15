@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">有损传输线中的指数衰减正弦波</title>
+  <desc id="desc">正弦波沿传播方向振荡，其正负包络按指数函数衰减。</desc>
+  <rect width="1200" height="640" rx="28" fill="#f8fafc"/>
+  <style>
+    .axis{stroke:#334155;stroke-width:4;stroke-linecap:round}.grid{stroke:#cbd5e1;stroke-width:2;stroke-dasharray:8 10}
+    .wave{fill:none;stroke:#2563eb;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+    .env{fill:none;stroke:#dc2626;stroke-width:5;stroke-dasharray:12 10}
+    .label{font:30px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}.small{font:25px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#475569}
+  </style>
+  <text x="600" y="55" text-anchor="middle" class="label" font-weight="700">Exponential attenuation on a lossy transmission line</text>
+  <line x1="95" y1="320" x2="1110" y2="320" class="axis"/><line x1="120" y1="570" x2="120" y2="95" class="axis"/>
+  <path d="M1090 305l22 15-22 15M105 115l15-22 15 22" fill="none" class="axis"/>
+  <line x1="120" y1="145" x2="1100" y2="145" class="grid"/><line x1="120" y1="495" x2="1100" y2="495" class="grid"/>
+  <path d="M120 145 C245 164 375 188 505 212 C650 239 810 262 1100 291" class="env"/>
+  <path d="M120 495 C245 476 375 452 505 428 C650 401 810 378 1100 349" class="env"/>
+  <path d="M120 145 C141 150 149 480 180 482 C211 484 220 167 252 169 C284 171 294 457 326 457 C358 457 369 189 401 191 C433 193 445 434 477 433 C509 432 521 211 553 213 C585 215 597 412 629 410 C661 408 673 234 705 236 C737 238 749 390 781 388 C813 386 825 256 857 258 C889 260 901 368 933 366 C965 364 977 277 1009 279 C1041 281 1060 348 1100 349" class="wave"/>
+  <text x="1125" y="331" class="label">x</text><text x="68" y="90" class="label">V</text>
+  <text x="755" y="220" class="label" fill="#dc2626">+V₀e<tspan baseline-shift="super" font-size="20">−αx</tspan></text>
+  <text x="755" y="442" class="label" fill="#dc2626">−V₀e<tspan baseline-shift="super" font-size="20">−αx</tspan></text>
+  <text x="165" y="610" class="small">amplitude ∝ e<tspan baseline-shift="super" font-size="17">−αx</tspan></text>
+  <text x="760" y="610" class="small">power ∝ e<tspan baseline-shift="super" font-size="17">−2αx</tspan></text>
+</svg>
