@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">2022 Q2 silicon solar-cell current-voltage curve</title>
+  <desc id="desc">Output current remains close to 95 milliamperes at low voltage, reaches a maximum-power point near 0.553 volts and 90.7 milliamperes, and falls to zero at the open-circuit voltage of 0.633 volts.</desc>
+  <rect width="900" height="560" rx="24" fill="#fbfcff"/>
+  <g stroke="#d9dfeb" stroke-width="1">
+    <path d="M100 70V470M207 70V470M315 70V470M423 70V470M531 70V470M638 70V470M746 70V470"/>
+    <path d="M100 70H800M100 150H800M100 230H800M100 310H800M100 390H800M100 470H800"/>
+  </g>
+  <g stroke="#344054" stroke-width="3" fill="none">
+    <path d="M100 65V470H810"/>
+    <path d="M100 65l-7 13h14z" fill="#344054" stroke="none"/>
+    <path d="M810 470l-13-7v14z" fill="#344054" stroke="none"/>
+  </g>
+  <g fill="#475467" font-family="Arial, sans-serif" font-size="18">
+    <text x="82" y="478">0</text><text x="196" y="500">0.1</text><text x="304" y="500">0.2</text>
+    <text x="412" y="500">0.3</text><text x="520" y="500">0.4</text><text x="627" y="500">0.5</text>
+    <text x="735" y="500">0.6</text><text x="790" y="500">V</text>
+    <text x="58" y="476">0</text><text x="48" y="396">20</text><text x="48" y="316">40</text>
+    <text x="48" y="236">60</text><text x="48" y="156">80</text><text x="38" y="76">100</text>
+    <text x="415" y="535">Terminal voltage (V)</text>
+    <text transform="translate(24 340) rotate(-90)">Output current (mA)</text>
+  </g>
+  <path d="M100 90 L208 90 L315 90 L423 90 L531 90.05 L585 90.3 L638 92.2 L665 95.8 L692 105.3 L719 130.2 L746 195.5 L767 318.3 L778 425.9 L782 467.2"
+        fill="none" stroke="#1769e0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="696" cy="107" r="8" fill="#e5484d" stroke="white" stroke-width="3"/>
+  <path d="M696 107L625 170" stroke="#e5484d" stroke-width="2"/>
+  <rect x="454" y="162" width="214" height="66" rx="10" fill="white" stroke="#f0a3a6"/>
+  <g fill="#7a271a" font-family="Arial, sans-serif" font-size="17">
+    <text x="468" y="187">Maximum power point</text>
+    <text x="468" y="212">0.553 V, 90.7 mA</text>
+  </g>
+  <circle cx="782" cy="467" r="7" fill="#12a594" stroke="white" stroke-width="3"/>
+  <path d="M782 467L720 420" stroke="#12877b" stroke-width="2"/>
+  <rect x="563" y="364" width="192" height="58" rx="10" fill="white" stroke="#79cfc5"/>
+  <g fill="#0e6259" font-family="Arial, sans-serif" font-size="17">
+    <text x="577" y="388">Open circuit</text>
+    <text x="577" y="411">Voc = 0.633 V</text>
+  </g>
+</svg>
